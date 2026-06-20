@@ -1,0 +1,10 @@
+frontend/
+dentalist_app/
+.git/
+.github/
+*.md
+.gitignore
+railway.json
+docker-compose.yml
+build-apk.bat
+Dentalist.apk
