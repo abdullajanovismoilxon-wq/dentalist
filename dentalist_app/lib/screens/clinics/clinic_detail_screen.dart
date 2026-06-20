@@ -9,6 +9,7 @@ import '../../providers/clinic_provider.dart';
 import '../../providers/doctor_provider.dart';
 import '../../providers/auth_provider.dart';
 import '../../widgets/app_components.dart';
+import '../../widgets/star_breakdown.dart';
 import '../../utils/image_utils.dart';
 
 final clinicDoctorsProvider = FutureProvider.family<List<Doctor>, int>((ref, clinicId) async {
@@ -115,7 +116,7 @@ class _ClinicDetailScreenState extends ConsumerState<ClinicDetailScreen> {
                   ],
                 ),
                 const SizedBox(height: 8),
-                if (clinic.rating != null) ...[
+                  if (clinic.rating != null) ...[
                   Row(
                     children: [
                       AppStarRating(rating: clinic.rating!, size: StarSize.sm),
@@ -124,6 +125,10 @@ class _ClinicDetailScreenState extends ConsumerState<ClinicDetailScreen> {
                           style: const TextStyle(color: Color(AppColors.textSecondary))),
                     ],
                   ),
+                  if (clinic.ratingBreakdown != null && clinic.reviewCount != null && clinic.reviewCount! > 0) ...[
+                    const SizedBox(height: 12),
+                    StarBreakdown(breakdown: Map<String, Map<String, dynamic>>.from(clinic.ratingBreakdown!), total: clinic.reviewCount!),
+                  ],
                   const SizedBox(height: 8),
                 ],
                 if (clinic.address != null) _infoTile(Icons.location_on_outlined, clinic.address!),

@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import dj_database_url
 from dotenv import load_dotenv
 from datetime import timedelta
 
@@ -73,16 +74,20 @@ TEMPLATES = [
 WSGI_APPLICATION = "backend.config.wsgi.application"
 ASGI_APPLICATION = "backend.config.asgi.application"
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DB_NAME", "dentalist_db"),
-        "USER": os.environ.get("DB_USER", "dentalist_user"),
-        "PASSWORD": os.environ.get("DB_PASSWORD", "dentalist1"),
-        "HOST": os.environ.get("DB_HOST", "localhost"),
-        "PORT": os.environ.get("DB_PORT", "5432"),
+DATABASE_URL = os.environ.get("DATABASE_URL")
+if DATABASE_URL:
+    DATABASES = {"default": dj_database_url.config(default=DATABASE_URL, conn_max_age=600)}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.environ.get("DB_NAME", "dentalist_db"),
+            "USER": os.environ.get("DB_USER", "dentalist_user"),
+            "PASSWORD": os.environ.get("DB_PASSWORD", "dentalist1"),
+            "HOST": os.environ.get("DB_HOST", "localhost"),
+            "PORT": os.environ.get("DB_PORT", "5432"),
+        }
     }
-}
 
 CHANNEL_LAYERS = {
     "default": {
