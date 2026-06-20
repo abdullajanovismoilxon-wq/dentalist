@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Dentalist</string>
+    <string name="title_activity_main">Dentalist</string>
+    <string name="package_name">com.dentalist.app</string>
+    <string name="custom_url_scheme">com.dentalist.app</string>
+</resources>

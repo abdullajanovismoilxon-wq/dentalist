@@ -1,0 +1,76 @@
+# Flutter build
+dentalist_app/build/
+dentalist_app/.dart_tool/
+dentalist_app/.packages
+dentalist_app/.pub/
+dentalist_app/pubspec.lock
+dentalist_app/.flutter-plugins
+dentalist_app/.flutter-plugins-dependencies
+dentalist_app/android/.gradle/
+dentalist_app/android/app/build/
+dentalist_app/android/app/.cxx/
+dentalist_app/android/local.properties
+dentalist_app/android/*.iml
+dentalist_app/android/*.hprof
+dentalist_app/android/*.keystore
+dentalist_app/ios/Pods/
+dentalist_app/ios/.symlinks/
+dentalist_app/ios/Flutter/App.framework
+dentalist_app/ios/Flutter/Flutter.framework
+dentalist_app/ios/Flutter/Generated.xcconfig
+dentalist_app/ios/Flutter/ephemeral
+dentalist_app/ios/Runner/GeneratedPluginRegistrant.*
+
+# APK
+*.apk
+Dentalist.apk
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+*.env.local
+
+# Node
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# Python
+backend/venv/
+backend/.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Django
+backend/media/
+backend/logs/
+backend/staticfiles/
+backend/db.sqlite3
+
+# Capacitor
+frontend/android/.gradle/
+frontend/android/app/build/
+frontend/android/*.iml
+frontend/android/*.hprof
+frontend/android/local.properties
+frontend/android/app/.cxx/
+
+# Logs
+*.log
+frontend/dev-err.log
+frontend/dev-out.log
+frontend/standalone-err.log
+frontend/standalone-out.log
+
+# TypeScript build info
+*.tsbuildinfo
